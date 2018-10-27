@@ -28,7 +28,6 @@ import losses
 import utils 
 import newmodels
 
-
 img_row = 192
 img_col = 256
 img_chan = 3
@@ -37,7 +36,7 @@ batchnum = 16
 smooth = 1.
 input_size = (img_row, img_col, img_chan)
     
-sgd = SGD(lr=0.01, momentum=0.95, decay=1e-6)
+sgd = SGD(lr=0.01, momentum=0.90, decay=1e-6)
 adam = Adam(lr=1e-3) 
 
 curr_dir = os.getcwd()

@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-use BUS data in a unet
 @author: Nabilla Abraham
 """
-
-
 import os 
 import cv2 
 import numpy as np 
@@ -27,7 +24,6 @@ from sklearn.model_selection import train_test_split
 import losses 
 import utils 
 import newmodels
-
 
 from keras.backend.tensorflow_backend import set_session
 config = tf.ConfigProto()
@@ -67,7 +63,6 @@ for i in range(num_imgs):
     imgs[i] = cv2.resize(tmp_img, (img_col,img_row), interpolation=cv2.INTER_NEAREST)
     gts[i] = cv2.resize(tmp_gt,(img_col,img_row), interpolation=cv2.INTER_NEAREST)
     
-
 indices = np.arange(0,num_imgs,1)
 
 imgs_train, imgs_test, \
@@ -105,7 +100,6 @@ recall = np.zeros_like(dsc)
 tn = np.zeros_like(dsc)
 prec = np.zeros_like(dsc)
 
-
 thresh = 0.5
 
 for i in range(num_test):
@@ -130,7 +124,6 @@ dsc = np.zeros((num_test,1))
 recall = np.zeros_like(dsc)
 tn = np.zeros_like(dsc)
 prec = np.zeros_like(dsc)
-
 
 for i in range(num_test):
     gt = orig_gts[testIdx[i]]
@@ -174,39 +167,3 @@ y_preds = preds.ravel()
 precision, recall, thresholds = precision_recall_curve(y_true, y_preds)
 plt.figure(20)
 plt.plot(recall,precision)
-
-#np.save('pr//unet-fl-prec.npy', precision)
-#np.save('pr//unet-fl-rec.npy', recall)
-
-
-'''
-fig, ax = plt.subplots(1,1)
-ax.plot(recall, precision) #, label='ROC curve (area = %0.2f)' % roc_auc)
-ax.set_xlim([0.0, 1.0])
-ax.set_ylim([0.0, 1.05])
-ax.set_xlabel('Recall')
-ax.set_ylabel('Precision')
-ax.legend(loc="lower right")
-'''
-
-
-'''
-allpreds2 = model.predict(imgs_test)
-
-idx = np.random.randint(0,num_test)
-gt_plot = orig_gts[testIdx[idx]]
-
-for pred in allpreds2:
-    plt.figure()
-    plt.imshow(np.squeeze(pred[idx]), cmap='gray')
-plt.figure()
-plt.imshow(gt_plot)
-
-# how much of the image is actually roi and what is the spread of those rois?
-roi_pixels = np.zeros((num_imgs,1)) 
-for i,img in enumerate(orig_gts):
-    roi_pixels[i] = (np.sum(img))/(img.shape[0]*img.shape[1])
-    
-print(np.mean(roi_pixels))
-print(np.std(roi_pixels))
-'''
