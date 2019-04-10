@@ -6,9 +6,9 @@ Figure 1 in the paper is parametrized by the function ![](https://latex.codecogs
 
 However, the code in this repository follows the parametrization: ![](https://latex.codecogs.com/gif.latex?%281%20-TI_c%29%5E%7B%7B%5Cfrac%7B1%7D%7B%5Cgamma%7D%7D%7D). I apologize for any confusion! Both parametrizations have the same effect however I found the latter one to be more stable and that is the loss function presented in this repo. 
 
-![Observe the behavior of the loss function with different modulations by gamma](\images\ftl.png)
+!Observe the behaviour of the loss function with different modulations by gamma: ![](/images/ftl.png)
 
-We utilize attention gating in this repo which follows from [Ozan Oktan and his collaborators](https://arxiv.org/abs/1804.03999). The workflow is depicted below: ![](\images\ag.png)
+We utilize attention gating in this repo which follows from [Ozan Oktan and his collaborators](https://arxiv.org/abs/1804.03999). The workflow is depicted below: ![](/images/ag.png)
 
 If you find this code useful, please consider citing our work:
 
