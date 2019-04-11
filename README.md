@@ -2,9 +2,9 @@
 
 This repo contains the code accompanying our paper [A novel focal Tversky loss function and improved Attention U-Net for lesion segmentation](https://arxiv.org/abs/1810.07842) accepted at [ISBI 2019](https://biomedicalimaging.org/2019/).
 
-Figure 1 in the paper is parametrized by the function ![](https://latex.codecogs.com/gif.latex?1%20-%28TI_c%29%5E%7B%7B%5Cfrac%7B1%7D%7B%5Cgamma%7D%7D%7D)
+Figure 1 in the paper is parametrized by the function ![](https://latex.codecogs.com/gif.download?1%20-%20%28TI_c%29%5E%7B%7B%5Cgamma%7D%7D) which is incorrectly depicted in Equation 4.
 
-However, the code in this repository follows the parametrization: ![](https://latex.codecogs.com/gif.latex?%281%20-TI_c%29%5E%7B%7B%5Cfrac%7B1%7D%7B%5Cgamma%7D%7D%7D). I apologize for any confusion! Both parametrizations have the same effect however I found the latter one to be more stable and so that is the loss function presented in this repo. 
+The code in this repository follows the parametrization: ![](https://latex.codecogs.com/gif.latex?%281%20-TI_c%29%5E%7B%7B%5Cfrac%7B1%7D%7B%5Cgamma%7D%7D%7D) which is in line with Equation 4. I apologize for the confusion! Both parametrizations have the same effect on the gradients however I found the latter one to be more stable and so that is the loss function presented in this repo. 
 
 <img src="https://github.com/nabsabraham/focal-tversky-unet/blob/master/images/ftl.png" alt="Observe the behaviour of the loss function with different modulations by gamma" width="500"/> 
 
