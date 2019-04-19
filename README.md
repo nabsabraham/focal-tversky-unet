@@ -12,7 +12,7 @@ The code in this repository follows the parametrization: ![](https://latex.codec
 <img src="https://github.com/nabsabraham/focal-tversky-unet/blob/master/images/ftl.png" alt="Observe the behaviour of the loss function with different modulations by gamma" width="400"/> 
 
 We utilize attention gating in this repo which follows from [Ozan Oktan and his collaborators](https://arxiv.org/abs/1804.03999). The workflow is depicted below:
-<img src="https://github.com/nabsabraham/focal-tversky-unet/blob/master/images/ag.png" width="400" height="200"> 
+<img src="https://github.com/nabsabraham/focal-tversky-unet/blob/master/images/ag.png" width="550" height="200"> 
 
 ### Training
 Training files for the ISIC2018 and BUS2017 Dataset B have been added. 
